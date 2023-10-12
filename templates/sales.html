@@ -1,0 +1,60 @@
+{% extends "dashboardbase.html" %}
+{% block title %}products{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+<div class="container">
+    <form method="POST" action="/add-sales" class="mt-4">
+      <select name="pid">
+        {% for prods in myprods %}
+        <option value="{{ prods[0] }}">{{ prods[1] }}</option>
+        {% endfor %}
+      </select>
+       
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">quantity</label>
+        <input type="number" class="form-control" name="quantity" id="exampleInputPassword1">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+  </div>
+
+  <div class="container-fluid">
+    <table>
+
+      <table class="table" id="myTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>pid</th>
+            <th>quantity</th>
+            <th>created_at</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for s in mysales %}
+          <tr>
+            <th>{{s[0]}}</th>
+            <td>{{s[1]}}</td>
+            <td>{{s[2]}}</td>
+            <td>{{s[3]}}</td>
+          </tr>
+          {% endfor %}
+
+        </tbody>
+      </table>
+    </table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script>
+      let table = new DataTable('#myTable');
+    </script>
+
+{% endblock %}
