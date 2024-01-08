@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+{% block title %}my shop{% endblock %}
+{% block head %}
+{{ super() }}
+<style>
+    .container-fluid {
+        position: relative;
+        width: 100%;
+    
+    }
+
+    .container-2{
+        position: relative;
+        width: 70%;
+        background-color: brown;
+        margin-top: 8%;
+        margin-left: 30%;
+        
+
+    }
+    /* .container-1{
+        position: relative;
+        width: 30%;
+        margin-top: 8%;
+        background-color: blueviolet;
+    } */
+    
+    
+</style>
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <!-- <div class="container-1">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere fuga unde culpa repellendus asperiores corporis, at aut iusto optio quia!</p>
+    </div> -->
+    <div class="container-2">
+        <div class="row">
+            <div class="col-4">
+                <div class="card" style="width: 16rem;">
+                    <img src="/static/images/oranges.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">oranges</h5>
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias!</p>
+                        <a href="#" class="btn btn-primary">add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="width: 16rem;">
+                    <img src="/static/images/oranges.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">oranges</h5>
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias!</p>
+                        <a href="#" class="btn btn-primary">add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="width: 16rem;">
+                    <img src="/static/images/oranges.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">oranges</h5>
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias!</p>
+                        <a href="#" class="btn btn-primary">add to cart</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- num2 -->
+
+        <div class="row" style="margin-top: 3%;">
+            <div class="col-4">
+                <div class="card" style="width: 16rem;">
+                    <img src="/static/images/oranges.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">oranges</h5>
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias!</p>
+                        <a href="#" class="btn btn-primary">add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="width: 16rem;">
+                    <img src="/static/images/oranges.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">oranges</h5>
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias!</p>
+                        <a href="#" class="btn btn-primary">add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="width: 16rem;">
+                    <img src="/static/images/oranges.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">oranges</h5>
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias!</p>
+                        <a href="#" class="btn btn-primary">add to cart</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}
