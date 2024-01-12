@@ -1,5 +1,5 @@
 import psycopg2
-from flask import Flask,render_template,request,redirect,session
+from flask import Flask,render_template,request,redirect,session,flash
 from dbservice import get_data,add_product,create_user,check_email_password_match,add_sale,calc_profit
 try:
     conn = psycopg2.connect(
@@ -8,6 +8,8 @@ except:
     print('unable to connect to the database')
 
 app=Flask(__name__)
+
+app.secret_key = "sales%.system"
 
 @app.route("/")
 def index():
@@ -89,5 +91,12 @@ def profit():
         dates.append(str(i[0]))
         profits.append(float(i[1]))
     return render_template("profit.html",dates=dates,profits=profits)
+
+@app.route("/logout")
+def logout():
+    session.pop('email', None)
+    flash('logout successfully')
+    return render_template('login.html')
+
 
 app.run(debug=True)
